@@ -10,7 +10,6 @@ const answersSet = {
 };
 
 function ItemsList({ list }) {
-  console.log(list)
   
   return (
     <ul>

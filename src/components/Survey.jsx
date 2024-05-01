@@ -41,7 +41,6 @@ function Survey() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(formData)
         answersList.push(formData)
         setAnswersList([...answersList])
         setFormData({...emptyForm})
