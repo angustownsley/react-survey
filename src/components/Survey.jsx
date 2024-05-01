@@ -9,7 +9,7 @@ function Survey() {
     const [formData, setFormData] = useState({
         username: "",
         color: "",
-        timeSpend: [],
+        timeSpent: [],
         review: "",
         email: "",
     })
@@ -17,7 +17,7 @@ function Survey() {
     const emptyForm = {
         username: "",
         color: "",
-        timeSpend: [],
+        timeSpent: [],
         review: "",
         email: "",
     }
@@ -26,13 +26,13 @@ function Survey() {
     function handleChange(e) {
         const { name, value, type, checked } = e.target
 
-        const tempTimeSpendArr = structuredClone(formData.timeSpend)
+        const tempTimeSpentArr = structuredClone(formData.timeSpent)
 
         if (type === "checkbox") {
             checked
-                ? tempTimeSpendArr.push(value)
-                : tempTimeSpendArr.splice(tempTimeSpendArr.indexOf(value), 1)
-                setFormData({...formData, timeSpend:tempTimeSpendArr})
+                ? tempTimeSpentArr.push(value)
+                : tempTimeSpentArr.splice(tempTimeSpentArr.indexOf(value), 1)
+                setFormData({...formData, timeSpent:tempTimeSpentArr})
             return
         }
 
@@ -41,7 +41,9 @@ function Survey() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        setAnswersList([...answersList], formData)
+        console.log(formData)
+        answersList.push(formData)
+        setAnswersList([...answersList])
         setFormData({...emptyForm})
     }
 
